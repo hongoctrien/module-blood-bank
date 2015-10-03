@@ -1,0 +1,37 @@
+# Ignore some static files and directories.
+/.htaccess
+/config.php
+/CHANGELOG.txt
+/COPYRIGHT.txt
+/CONTRIBUTING.md
+/README.md
+/favicon.ico
+/index.php
+/LICENSE.txt
+/robots.php
+/robots.txt
+/web.config
+/admin/
+/assets/
+/data/
+/install/
+/uploads/
+
+# Ignore fix module files and directories.
+/modules/*
+!/modules/blood-bank
+!/modules/blood-bank/*
+/themes/*
+!/themes/admin_default/css/blood-bank.css
+!/themes/admin_default/js/blood-bank.js
+!/themes/admin_default/images/blood-bank
+!/themes/admin_default/images/blood-bank/*
+!/themes/admin_default/modules/blood-bank
+!/themes/admin_default/modules/blood-bank/*
+!/themes/default/css/blood-bank.css
+!/themes/default/js/blood-bank.js
+!/themes/default/images/blood-bank
+!/themes/default/images/blood-bank/*
+!/themes/default/modules/blood-bank
+!/themes/default/modules/blood-bank/*
+/.project
