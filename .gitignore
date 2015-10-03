@@ -12,6 +12,7 @@
 /robots.txt
 /web.config
 /admin/
+/includes/
 /assets/
 /data/
 /install/
@@ -26,12 +27,8 @@
 !/themes/admin_default/js/blood-bank.js
 !/themes/admin_default/images/blood-bank
 !/themes/admin_default/images/blood-bank/*
-!/themes/admin_default/modules/blood-bank
-!/themes/admin_default/modules/blood-bank/*
 !/themes/default/css/blood-bank.css
 !/themes/default/js/blood-bank.js
-!/themes/default/images/blood-bank
-!/themes/default/images/blood-bank/*
 !/themes/default/modules/blood-bank
 !/themes/default/modules/blood-bank/*
 /.project
