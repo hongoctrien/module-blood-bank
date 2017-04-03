@@ -234,10 +234,10 @@ if( $nv_Request->isset_request( 'submit', 'post' ) )
 }
 
 $sql = 'SELECT * FROM ' . $db_config['prefix'] . '_location_province';
-$array_province = nv_db_cache( $sql, 'provinceid', $module_name );
+$array_province = $nv_Cache->db( $sql, 'provinceid', $module_name );
 
 $sql = 'SELECT * FROM ' . NV_PREFIXLANG . '_' . $module_data . '_organizetype WHERE status=1 ORDER BY id DESC';
-$array_organizetype = nv_db_cache( $sql, 'id', $module_name );
+$array_organizetype = $nv_Cache->db( $sql, 'id', $module_name );
 
 $contents = nv_theme_blood_bank_content( $array_data, $array_user, $is_success, $error );
 

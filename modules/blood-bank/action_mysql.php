@@ -39,26 +39,26 @@ $sql_create_module[] = "CREATE TABLE " . $db_config['prefix'] . "_" . $lang . "_
   recent_time int(11) NOT NULL COMMENT 'Thời gian hiến máu gần nhất',
   platelet tinyint(1) unsigned NOT NULL COMMENT 'Hiến tiểu cầu',
   organizetype tinyint(2) unsigned NOT NULL DEFAULT '0',
-  organize varchar(255) NOT NULL COMMENT 'Tổ chức',
+  organize varchar(250) NOT NULL COMMENT 'Tổ chức',
   resident_p varchar(10) NOT NULL COMMENT 'Thường trú - Tỉnh',
   resident_d varchar(10) NOT NULL COMMENT 'Thường trú - Huyện',
   resident_w varchar(10) NOT NULL COMMENT 'Thường trú - Xã',
   temporarily_p varchar(10) NOT NULL COMMENT 'Tạm trú - Tỉnh',
   temporarily_d varchar(10) NOT NULL COMMENT 'Tạm trú - Huyện',
   temporarily_w varchar(10) NOT NULL COMMENT 'Tạm trú - Xã',
-  temporarily_s varchar(255) NOT NULL COMMENT 'Đường / Số nhà',
+  temporarily_s varchar(250) NOT NULL COMMENT 'Đường / Số nhà',
   PRIMARY KEY (id)
 ) ENGINE=MyISAM";
 
 $sql_create_module[] = "CREATE TABLE " . $db_config['prefix'] . "_" . $lang . "_" . $module_data . "_config(
   config_name varchar(30) NOT NULL,
-  config_value varchar(255) NOT NULL,
+  config_value varchar(250) NOT NULL,
   UNIQUE KEY config_name (config_name)
 ) ENGINE=MyISAM";
 
 $sql_create_module[] = "CREATE TABLE " . $db_config['prefix'] . "_" . $lang . "_" . $module_data . "_donation(
   id mediumint(8) unsigned NOT NULL AUTO_INCREMENT COMMENT 'ID đợt hiến máu',
-  title varchar(255) NOT NULL COMMENT 'Tiêu đề đợt hiến máu',
+  title varchar(250) NOT NULL COMMENT 'Tiêu đề đợt hiến máu',
   organ_id mediumint(4) unsigned NOT NULL DEFAULT '0' COMMENT 'ID tổ chức thực hiện',
   donor_id mediumint(4) unsigned NOT NULL COMMENT 'ID địa điểm hiến máu',
   start_time int(11) unsigned NOT NULL DEFAULT '0' COMMENT 'Ngày bắt đầu',
@@ -76,7 +76,7 @@ $sql_create_module[] = "CREATE TABLE " . $db_config['prefix'] . "_" . $lang . "_
   weight float unsigned NOT NULL COMMENT 'Cân nặng',
   pulse float NOT NULL COMMENT 'Mạch đập',
   blood_pressure varchar(20) NOT NULL COMMENT 'Huyết áp',
-  state varchar(255) NOT NULL COMMENT 'Tình trạng lâm sàn',
+  state varchar(250) NOT NULL COMMENT 'Tình trạng lâm sàn',
   adduser int(11) unsigned NOT NULL COMMENT 'Người nhập',
   addtime int(11) unsigned NOT NULL DEFAULT '0' COMMENT 'Thời gian nhập',
   PRIMARY KEY (id),
@@ -85,19 +85,19 @@ $sql_create_module[] = "CREATE TABLE " . $db_config['prefix'] . "_" . $lang . "_
 
 $sql_create_module[] = "CREATE TABLE " . $db_config['prefix'] . "_" . $lang . "_" . $module_data . "_location_donor(
   id mediumint(4) unsigned NOT NULL AUTO_INCREMENT COMMENT 'ID địa điểm',
-  title varchar(255) NOT NULL COMMENT 'Tên địa điểm',
+  title varchar(250) NOT NULL COMMENT 'Tên địa điểm',
   type_id tinyint(2) unsigned NOT NULL,
   description text NOT NULL COMMENT 'Mô tả địa điểm',
   province varchar(10) NOT NULL COMMENT 'ID Tỉnh/Thành phố',
   district varchar(10) NOT NULL COMMENT 'ID Quận/Huyện',
-  extend varchar(255) NOT NULL COMMENT 'Địa chỉ mở rộng',
+  extend varchar(250) NOT NULL COMMENT 'Địa chỉ mở rộng',
   status tinyint(1) unsigned NOT NULL COMMENT 'Trạng thái',
   PRIMARY KEY (id)
 ) ENGINE=MyISAM";
 
 $sql_create_module[] = "CREATE TABLE " . $db_config['prefix'] . "_" . $lang . "_" . $module_data . "_locationtype(
   id tinyint(2) unsigned NOT NULL AUTO_INCREMENT,
-  title varchar(255) NOT NULL COMMENT 'Tên gọi loại địa điểm',
+  title varchar(250) NOT NULL COMMENT 'Tên gọi loại địa điểm',
   note tinytext NOT NULL COMMENT 'Ghi chú',
   status tinyint(1) NOT NULL COMMENT 'Trạng thái',
   PRIMARY KEY (id)
@@ -105,7 +105,7 @@ $sql_create_module[] = "CREATE TABLE " . $db_config['prefix'] . "_" . $lang . "_
 
 $sql_create_module[] = "CREATE TABLE " . $db_config['prefix'] . "_" . $lang . "_" . $module_data . "_organize(
   id mediumint(4) unsigned NOT NULL AUTO_INCREMENT,
-  title varchar(255) NOT NULL COMMENT 'Tên gọi',
+  title varchar(250) NOT NULL COMMENT 'Tên gọi',
   note tinytext NOT NULL COMMENT 'Ghi chú',
   status tinyint(1) NOT NULL COMMENT 'Trạng thái',
   PRIMARY KEY (id)
@@ -113,7 +113,7 @@ $sql_create_module[] = "CREATE TABLE " . $db_config['prefix'] . "_" . $lang . "_
 
 $sql_create_module[] = "CREATE TABLE " . $db_config['prefix'] . "_" . $lang . "_" . $module_data . "_organizetype(
   id tinyint(2) unsigned NOT NULL AUTO_INCREMENT,
-  title varchar(255) NOT NULL COMMENT 'Tên gọi loại tổ chức',
+  title varchar(250) NOT NULL COMMENT 'Tên gọi loại tổ chức',
   note tinytext NOT NULL COMMENT 'Ghi chú',
   status tinyint(1) NOT NULL COMMENT 'Trạng thái',
   PRIMARY KEY (id)

@@ -105,7 +105,7 @@
 				<div class="col-sm-10">
 					<select name="province" class="form-control" id="province" style="width: 100%">
 						<!-- BEGIN: province -->
-						<option value="{PROVINCE.provinceid}" {PROVINCE.selected}>{PROVINCE.name}</option>
+						<option value="{PROVINCE.provinceid}" {PROVINCE.selected}>{PROVINCE.title}</option>
 						<!-- END: province -->
 					</select>
 				</div>

@@ -224,7 +224,7 @@ if( $nv_Request->isset_request( 'export', 'get' ) )
 $db->sqlreset()
   ->select( 'COUNT(*)' )
   ->from( NV_PREFIXLANG . '_' . $module_data . ' t1' )
-  ->join( 'LEFT JOIN ' . NV_USERS_GLOBALTABLE . ' t2 ON t1.userid=t2.userid LEFT JOIN ' . $db_config['prefix'] . '_groups_users t3 ON t2.userid=t3.userid' )
+  ->join( 'LEFT JOIN ' . NV_USERS_GLOBALTABLE . ' t2 ON t1.userid=t2.userid LEFT JOIN ' . NV_GROUPS_GLOBALTABLE . '_users t3 ON t2.userid=t3.userid' )
   ->where( '1=1' . $where );
 
 $all_page = $db->query( $db->sql() )->fetchColumn();
@@ -313,7 +313,7 @@ foreach( $array_sex as $key => $value )
 }
 
 $sql = 'SELECT * FROM ' . $db_config['prefix'] . '_location_province';
-$array_province = nv_db_cache( $sql, 'provinceid', $module_name );
+$array_province = $nv_Cache->db( $sql, 'provinceid', $module_name );
 if( !empty( $array_province ) )
 {
 	foreach( $array_province as $province )

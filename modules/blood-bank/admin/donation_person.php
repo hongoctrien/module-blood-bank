@@ -47,7 +47,7 @@ if ( $nv_Request->isset_request( 'delete_id', 'get' ) and $nv_Request->isset_req
 		// Cap nhat so luong nguoi hien mau
 		$db->query( 'UPDATE ' . NV_PREFIXLANG . '_' . $module_data . '_donation SET num_blood_donor=num_blood_donor-1 WHERE id=' . $donation_id );
 
-		nv_del_moduleCache( $module_name );
+		$nv_Cache->delMod( $module_name );
 		Header( 'Location: ' . $base_url );
 		die();
 	}
@@ -173,7 +173,7 @@ if ( $nv_Request->isset_request( 'submit', 'post' ) )
 				// Cap nhat so luong nguoi hien mau
 				$db->query( 'UPDATE ' . NV_PREFIXLANG . '_' . $module_data . '_donation SET num_blood_donor=num_blood_donor+1 WHERE id=' . $row['donation_id'] );
 
-				nv_del_moduleCache( $module_name );
+				$nv_Cache->delMod( $module_name );
 				Header( 'Location: ' . $base_url );
 				die();
 			}
