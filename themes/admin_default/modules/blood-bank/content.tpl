@@ -82,7 +82,7 @@
 			<div class="form-group">
 				<label class="col-sm-3 control-label"><strong>{LANG.width}</strong></label>
 				<div class="col-sm-7">
-					<input type="text" name="width" value="{DATA.width}" class="form-control" />
+					<input type="text" name="width" value="{DATA.width}" class="form-control" required="required"/>
 				</div>
 				<label class="col-sm-3 control-label"><strong>{LANG.weight}</strong></label>
 				<div class="col-sm-10">

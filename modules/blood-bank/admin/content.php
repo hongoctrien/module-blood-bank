@@ -31,7 +31,7 @@ if( $nv_Request->isset_request( 'get_user_json', 'post, get' ) )
 	$sth->execute();
 
 	$array_data = array();
-	while( list( $userid, $username, $email, $first_name, $first_name ) = $sth->fetch( 3 ) )
+	while( list( $userid, $username, $email, $first_name, $last_name ) = $sth->fetch( 3 ) )
 	{
 		$array_data[] = array( 'id' => $userid, 'username' => $username, 'fullname' => nv_show_name_user( $first_name, $last_name ) );
 	}
