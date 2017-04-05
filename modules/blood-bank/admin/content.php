@@ -31,7 +31,7 @@ if( $nv_Request->isset_request( 'get_user_json', 'post, get' ) )
 	$sth->execute();
 
 	$array_data = array();
-	while( list( $userid, $username, $email, $first_name, $first_name ) = $sth->fetch( 3 ) )
+	while( list( $userid, $username, $email, $first_name, $last_name ) = $sth->fetch( 3 ) )
 	{
 		$array_data[] = array( 'id' => $userid, 'username' => $username, 'fullname' => nv_show_name_user( $first_name, $last_name ) );
 	}
@@ -57,8 +57,8 @@ if( $nv_Request->isset_request( 'get_district', 'post' ) )
 	while( $row = $result->fetch() )
 	{
 		$sl = $sl_district == $row['districtid'] ? 'selected="selected"' : '';
-		$row['name'] = is_numeric( $row['name'] ) ? $row['type'] . ' ' . $row['name'] : $row['name'];
-		$option .= '<option value="' . $row['districtid'] . '" ' . $sl . ' >' . $row['name'] . '</ontion>';
+		$row['title'] = is_numeric( $row['title'] ) ? $row['type'] . ' ' . $row['title'] : $row['title'];
+		$option .= '<option value="' . $row['districtid'] . '" ' . $sl . ' >' . $row['title'] . '</ontion>';
 	}
 	die( $option );
 }
@@ -76,8 +76,8 @@ if( $nv_Request->isset_request( 'get_ward', 'post' ) )
 	while( $row = $result->fetch() )
 	{
 		$sl = $sl_ward == $row['wardid'] ? 'selected="selected"' : '';
-		$row['name'] = is_numeric( $row['name'] ) ? $row['type'] . ' ' . $row['name'] : $row['name'];
-		$option .= '<option value="' . $row['wardid'] . '" ' . $sl . ' >' . $row['name'] . '</ontion>';
+		$row['title'] = is_numeric( $row['title'] ) ? $row['type'] . ' ' . $row['title'] : $row['title'];
+		$option .= '<option value="' . $row['wardid'] . '" ' . $sl . ' >' . $row['title'] . '</ontion>';
 	}
 	die( $option );
 }
@@ -260,10 +260,10 @@ if( $nv_Request->isset_request( 'submit', 'post' ) )
 }
 
 $sql = 'SELECT * FROM ' . $db_config['prefix'] . '_location_province';
-$array_province = nv_db_cache( $sql, 'provinceid', $module_name );
+$array_province = $nv_Cache->db( $sql, 'provinceid', $module_name );
 
 $sql = 'SELECT * FROM ' . NV_PREFIXLANG . '_' . $module_data . '_organizetype WHERE status=1 ORDER BY id DESC';
-$array_organizetype = nv_db_cache( $sql, 'id', $module_name );
+$array_organizetype = $nv_Cache->db( $sql, 'id', $module_name );
 
 $array_data['recent_time'] = !empty( $array_data['recent_time'] ) ? nv_date( 'd/m/Y', $array_data['recent_time'] ) : '';
 $array_data['birthday'] = !empty( $array_data['birthday'] ) ? nv_date( 'd/m/Y', $array_data['birthday'] ) : '';
